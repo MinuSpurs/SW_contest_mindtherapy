@@ -1,9 +1,10 @@
+import os
 import mysql.connector
 
 # MySQL connection 설정
-cnx = mysql.connector.connect(user='root', password='pass6812',
-                              host='127.0.0.1',
-                              database='counseling')
+cnx = mysql.connector.connect(user=os.getenv('DB_USER'), password=os.getenv('DB_PASS'),
+                              host=os.getenv('DB_HOST'), database=os.getenv('DB_NAME'))
+
 cursor = cnx.cursor()
 
 # 삽입된 행의 수 세기
