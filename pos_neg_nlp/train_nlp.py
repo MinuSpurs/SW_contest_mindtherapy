@@ -11,8 +11,8 @@ import json
 from tqdm import tqdm
 
 #전처리 데이터 불러오기
-DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_Contest/CLEAN_DATA/' #데이터 경로 설정
-DATA_OUT = 'C:/Users/82107/Desktop/Study/SW_Contest/DATA_OUT/' #데이터 경로 설정
+DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_Contest/pos_neg_nlp/CLEAN_DATA/' #데이터 경로 설정
+DATA_OUT = 'C:/Users/82107/Desktop/Study/SW_Contest/pos_neg_nlp/DATA_OUT/' #데이터 경로 설정
 INPUT_TRAIN_DATA = 'nsmc_train_input.npy'
 LABEL_TRAIN_DATA = 'nsmc_train_label.npy'
 DATA_CONFIGS = 'data_configs.json'
@@ -91,6 +91,6 @@ history = model.fit(train_input, train_label, batch_size=BATCH_SIZE, epochs = NU
                     validation_split=VALID_SPLIT, callbacks=[earlystop_callback, cp_callback])
 
 # 모델 저장하기
-save_model(model,'C:/Users/82107/Desktop/Study/SW_Contest/my_models/') #저장폴더지정
+save_model(model,'C:/Users/82107/Desktop/Study/SW_Contest/pos_neg_nlp/my_models/') #저장폴더지정
 
 

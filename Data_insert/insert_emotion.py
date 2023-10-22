@@ -14,7 +14,7 @@ tokenizer  = Tokenizer()
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '4'
 
 DATA_CONFIGS = 'data_configs.json'
-prepro_configs = json.load(open('C:/Users/82107/Desktop/Study/SW_Contest/CLEAN_DATA/'+DATA_CONFIGS,'r')) #데이터 경로 설정
+prepro_configs = json.load(open('C:/Users/82107/Desktop/Study/SW_Contest/pos_neg_nlp/CLEAN_DATA/'+DATA_CONFIGS,'r')) #데이터 경로 설정
 
 #데이터 경로 설정
 with open('C:/Users/82107/Desktop/Study/SW_Contest/CLEAN_DATA/tokenizer.pickle','rb') as handle:
@@ -32,8 +32,8 @@ cnx = mysql.connector.connect(user=os.getenv('DB_USER'), password=os.getenv('DB_
 
 cursor = cnx.cursor()
 
-model = keras.models.load_model('C:/Users/82107/Desktop/Study/SW_Contest/my_models/') #데이터 경로 설정
-model.load_weights('C:/Users/82107/Desktop/Study/SW_Contest/DATA_OUT/cnn_classifier_kr/weights.h5') #데이터 경로 설정
+model = keras.models.load_model('C:/Users/82107/Desktop/Study/SW_Contest/pos_neg_nlp/my_models/') #데이터 경로 설정
+model.load_weights('C:/Users/82107/Desktop/Study/SW_Contest/pos_neg_nlp/DATA_OUT/cnn_classifier_kr/weights.h5') #데이터 경로 설정
 
 select_cursor = cnx.cursor(buffered=True)
 update_cursor = cnx.cursor()
