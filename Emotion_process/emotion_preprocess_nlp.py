@@ -99,7 +99,7 @@ test_inputs = pad_sequences(test_sequences,maxlen=MAX_SEQUENCE_LENGTH,padding='p
 #평가 데이터 라벨 벡터화
 test_labels = np.array(test_data['label'])
 
-DEFAULT_PATH  = 'C:/Users/gapbu/Desktop/SW_contest_mindtherapy/Emotion_process/' #경로지정
+DEFAULT_PATH  = 'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/' #경로지정
 DATA_PATH = 'CLEAN_DATA/' #.npy파일 저장 경로지정
 TRAIN_INPUT_DATA = 'nsmc_train_input.npy'
 TRAIN_LABEL_DATA = 'nsmc_train_label.npy'

@@ -34,9 +34,6 @@ tokenizer.fit_on_texts(word_vocab)
 
 MAX_LENGTH = 8 #문장최대길이
 
-# 감정 라벨을 정의합니다.
-EMOTION_LABELS = ['분노', '혐오', '공포', '기쁨', '슬픔', '놀람'] 
-
 while True:
     sentence=input('감성분석할 문장을 입력해 주세요.: ')
     if sentence=='끝':
@@ -65,3 +62,4 @@ while True:
     predicted_label=encoder.inverse_transform([predicted_index])
      
     print("입력 문장의 감정은 {} 입니다.".format(predicted_label[0]))
+ 

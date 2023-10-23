@@ -39,7 +39,7 @@ select_cursor = cnx.cursor(buffered=True)
 update_cursor = cnx.cursor()
 
 # client_comment 테이블에서 데이터 조회하기
-select_query = "SELECT client_key, body FROM client_disposable_comment"
+select_query = "SELECT client_key, body FROM client_comment"
 select_cursor.execute(select_query)
 
 results = select_cursor.fetchall()
@@ -79,7 +79,7 @@ for (client_key, body) in results:
     emotion = 'positive' if predictions > 0.5 else 'negative'
 
      # 감성 분석 결과를 emotion 열에 업데이트하기
-    update_query="UPDATE client_disposable_comment SET emotion=%s WHERE client_key=%s"
+    update_query="UPDATE client_comment SET emotion=%s WHERE client_key=%s"
     update_cursor.execute(update_query,(emotion,client_key))
 
     processed_count += 1
