@@ -7,7 +7,7 @@ from keras.utils import pad_sequences
 from keras.preprocessing.text import Tokenizer
 from sklearn.preprocessing import LabelEncoder
 
-DATA_PATH = 'C:/Users/gapbu/Desktop/SW_contest_mindtherapy/Emotion_process/DATA/' #데이터 경로 설정
+DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/DATA/' #데이터 경로 설정
 # Excel 파일 읽기
 data = pd.read_excel(DATA_PATH+'emotion_copurs_train.xlsx') # your_file.xlsx에 실제 파일 이름 입력
 

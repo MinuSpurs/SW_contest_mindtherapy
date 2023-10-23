@@ -5,7 +5,7 @@ import keras
 import pickle
 from keras.utils import to_categorical
 
-DATA_PATH = 'C:/Users/gapbu/Desktop/SW_contest_mindtherapy/Emotion_process/CLEAN_DATA/' #데이터 경로 설정
+DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/CLEAN_DATA/' #데이터 경로 설정
 INPUT_TEST_DATA = 'nsmc_test_input.npy'
 LABEL_TEST_DATA = 'nsmc_test_label.npy'
 SAVE_FILE_NM = 'weights.h5'
