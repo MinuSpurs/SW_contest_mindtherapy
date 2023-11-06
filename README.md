@@ -80,6 +80,10 @@
 * 긍정이면 is_pos에 1을, 부정이면 0을 INSERT 해준다.
 
 
+<p align="center">
+  <img src="![image](https://github.com/MinuSpurs/SW_contest_mindtherapy/assets/93541649/9e24d065-2b28-4c6d-8e6d-8c7883ea4521)">
+</p>
+
 
 ## Emotion_process
 
