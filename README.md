@@ -3,7 +3,7 @@
 ## SW_contest
 
 본 데이터셋의 상담 내용은 전량 OpenAI API를 통해 구축되었습니다.
-딥러닝에 필요한 데이터셋 중 자연어를 긍정과 부정인지 구별해주는 데이터는 공개된 영화 리뷰들, 자연어를 6가지 감정으로 나눠주는 데이터는 AI hub에 공개되어 있는 문장등을 통해 학습을 진행했다.
+딥러닝에 필요한 데이터셋 중 자연어를 긍정과 부정인지 구별해주는 데이터는 공개된 영화 리뷰들, 자연어를 6가지 감정으로 나눠주는 데이터는 AI hub에 공개되어 있는 상담 내용을 통해 학습을 진행했다.
 
 
 ## Data_insert
@@ -79,3 +79,17 @@
 * client_comment 테이블에 is_pos라는 컬럼을 추가해준다.
 * client_comment 테이블에서 내담자의 상담 내용을 조회하여 그 내용이 긍정인지 부정인지 판단한다.
 * 긍정이면 is_pos에 1을, 부정이면 0을 INSERT 해준다.
+
+
+
+## Emotion_process
+
+### emotion_preprocess_nlp.py
+
+* 6가지 감정이 라벨링 되어있는 AI hub에 공개되어 있는 상담 내용들을 preprocess_nlp.py와 같은 방식으로 전처리 해준다.
+
+
+### emotion_train_nlp.py
+
+* 앞서 train_nlp.py와 같은 분류모델을 사용하지만 다중 클래스 분류 문제이므로 손실 함수를 categorical_crossentropy로 설정해준다.
+* 이하 내용은 train_nlp.py와 같다.
