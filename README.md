@@ -72,3 +72,10 @@
 ### test_nlp.py
 
 * 학습한 트레이닝 데이터를 통해 테스트를 해서 정확도를 구한다.
+
+
+### insert_is_pos.py
+
+* client_comment 테이블에 is_pos라는 컬럼을 추가해준다.
+* client_comment 테이블에서 내담자의 상담 내용을 조회하여 그 내용이 긍정인지 부정인지 판단한다.
+* 긍정이면 is_pos에 1을, 부정이면 0을 INSERT 해준다.
