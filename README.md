@@ -1,0 +1,36 @@
+# SW_contest_mindtherapy
+SW_contest
+
+본 데이터셋의 상담 내용은 전량 OpenAI API를 통해 구축되었습니다.
+딥러닝에 필요한 데이터셋 중 자연어를 긍정과 부정인지 구별해주는 데이터는 공개된 영화 리뷰들, 자연어를 6가지 감정으로 나눠주는 데이터는 AI hub에 공개되어 있는 문장등을 통해 학습을 진행했다.
+
+
+Data_insert
+
+total_kor_counsel_bot.jsonl
+
+총 13,234 싱글턴 장문 데이터
+input: 고민 내용
+output: 상담사 답변
+
+total_kor_multiturn_counsel_bot.jsonl
+
+총 8,731 멀티턴 대화 데이터
+speaker: 발화자
+utterance: 발화 내용
+
+DB 환경
+
+먼저 MYSQL에 테이블들을 생성해서 싱글턴 대화와 멀티턴 대화를 상담자와 내담자를 구분지어 INSERT해주기 위해 jsonl파일을 불러오는 코드를 작성했다.
+각각의 테이블들은 자동으로 데이터를 INSERT 했을 때 PRIMARY_KEY 역할을 하는 id가 주어진다.
+
+insert_disposable_counselor.py
+
+싱글턴 장문 데이터를 DB에 INSERT 해주기 위한 코드다.
+jsonl파일의 각각의 줄을 json으로 변환해준다.
+싱글턴 장문 데이터는 client_disposable_comment와 counselor_disposable_comment 테이블 두개로 나누어 client_comment에는 내담자의 대화를, counselor_comment에는 상담자의 대화를 INSERT 해주었다.
+PRIMARY_KEY는 lient_disposable_comment에서는 client_disposable_key를 줄인 cdk_1, cdk_2 ... cdk_x 로 주어지고 counselor_disposable_comment는 sdk_1, sdk_2 ... sdk_x로 주어진다.
+
+insert_counselor.py
+
+jsonl파일의 각각의 줄을 json으로 변환해준다.
