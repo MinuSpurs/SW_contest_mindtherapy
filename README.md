@@ -5,6 +5,11 @@
 본 데이터셋의 상담 내용은 전량 OpenAI API를 통해 구축되었습니다.
 딥러닝에 필요한 데이터셋 중 자연어를 긍정과 부정인지 구별해주는 데이터는 공개된 영화 리뷰들, 자연어를 6가지 감정으로 나눠주는 데이터는 AI hub에 공개되어 있는 상담 내용을 통해 학습을 진행했다.
 
+### DB 환경
+
+* 먼저 MYSQL에 테이블들을 생성해서 싱글턴 대화와 멀티턴 대화를 상담자와 내담자를 구분지어 INSERT해주기 위해 jsonl파일을 불러오는 코드를 작성했다.
+각각의 테이블들은 자동으로 데이터를 INSERT 했을 때 PRIMARY_KEY 역할을 하는 id가 주어진다.
+
 
 ## Data_insert
 
@@ -20,12 +25,6 @@
 * 총 8,731 멀티턴 대화 데이터
 * speaker: 발화자
 * utterance: 발화 내용
-
-
-### DB 환경
-
-* 먼저 MYSQL에 테이블들을 생성해서 싱글턴 대화와 멀티턴 대화를 상담자와 내담자를 구분지어 INSERT해주기 위해 jsonl파일을 불러오는 코드를 작성했다.
-각각의 테이블들은 자동으로 데이터를 INSERT 했을 때 PRIMARY_KEY 역할을 하는 id가 주어진다.
 
 
 ### insert_disposable_counselor.py
@@ -77,7 +76,7 @@
 ### insert_is_pos.py
 
 * client_comment 테이블에 is_pos라는 컬럼을 추가해준다.
-* client_comment 테이블에서 내담자의 상담 내용을 조회하여 그 내용이 긍정인지 부정인지 판단한다.
+* client_comment 테이블을 통해 내담자의 상담 내용을 조회하여 그 내용이 긍정인지 부정인지 판단한다.
 * 긍정이면 is_pos에 1을, 부정이면 0을 INSERT 해준다.
 
 
@@ -93,3 +92,26 @@
 
 * 앞서 train_nlp.py와 같은 분류모델을 사용하지만 다중 클래스 분류 문제이므로 손실 함수를 categorical_crossentropy로 설정해준다.
 * 이하 내용은 train_nlp.py와 같다.
+
+
+### emotion_test_nlp.py
+
+* 학습한 트레이닝 데이터를 통해 테스트를 해서 정확도를 구한다.
+
+
+### insert_emotion.py
+
+* client_comment에 emotion이라는 컬럼을 추가해준다.
+* client_comment 테이블을 통해 내담자의 상담 내용을 조회하여 [분노, 기쁨, 불안, 당황, 슬픔, 상처] 중 감정 하나를 상담 내용을 통해 판단한다.
+* 판단 된 감정을 emotion 컬럼에 INSERT 해준다.
+
+
+
+## Korean_morphological_analysis
+
+### korean_morphological_analysis.py
+
+* 먼저 불용어 사전에 대한 데이터를 통해 문장에서 불용어를 제거해준다.
+* 불용어를 제거한 뒤 Okt를 통해 형태소 분석을 해준다.
+* 명사 위주로 된 형태소를 TF-IDF를 통해 문장에서 명사의 중요도를 판단한다.
+* 가장 중요도가 높은 명사를 추출하여 출력해준다.
