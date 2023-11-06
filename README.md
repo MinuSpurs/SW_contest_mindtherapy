@@ -81,7 +81,7 @@
 
 
 <p align="center">
-  <img src="![image](https://github.com/MinuSpurs/SW_contest_mindtherapy/assets/93541649/9e24d065-2b28-4c6d-8e6d-8c7883ea4521)">
+  <img src="![pos_predict](https://github.com/MinuSpurs/SW_contest_mindtherapy/assets/93541649/f2806367-6b44-46fe-895b-132452875f0b.PNG)">
 </p>
 
 
