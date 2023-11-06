@@ -79,10 +79,7 @@
 * client_comment 테이블을 통해 내담자의 상담 내용을 조회하여 그 내용이 긍정인지 부정인지 판단한다.
 * 긍정이면 is_pos에 1을, 부정이면 0을 INSERT 해준다.
 
-
-<p align="center">
-  <img src="![pos_predict](https://github.com/MinuSpurs/SW_contest_mindtherapy/assets/93541649/f2806367-6b44-46fe-895b-132452875f0b.PNG)">
-</p>
+![pos_predict](https://github.com/MinuSpurs/SW_contest_mindtherapy/assets/93541649/49541fe8-551c-4aa1-be76-642cd1e42f4d)
 
 
 ## Emotion_process
