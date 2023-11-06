@@ -12,7 +12,7 @@ from sklearn.preprocessing import LabelEncoder
 okt = Okt()
 tokenizer  = Tokenizer()
 
-DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/CLEAN_DATA/'
+DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/CLEAN_DATA/'
 LABEL_DATA = 'nsmc_test_label.npy'
 
 label_data = np.load(open(DATA_PATH + LABEL_DATA,'rb'))
@@ -22,10 +22,10 @@ EMOTION_LABELS = ['분노', '기쁨', '불안', '당황', '슬픔', '상처']
 encoder.fit(EMOTION_LABELS)
 
 DATA_CONFIGS = 'data_configs.json'
-prepro_configs = json.load(open('C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/CLEAN_DATA/'+DATA_CONFIGS,'r', encoding='utf-8')) 
+prepro_configs = json.load(open('C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/CLEAN_DATA/'+DATA_CONFIGS,'r', encoding='utf-8')) 
 
 #데이터 경로 설정
-with open('C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/CLEAN_DATA/tokenizer.pickle','rb') as handle:
+with open('C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/CLEAN_DATA/tokenizer.pickle','rb') as handle:
     word_vocab = pickle.load(handle)
 
 prepro_configs['vocab'] = word_vocab
@@ -53,8 +53,8 @@ while True:
     pad_new=pad_sequences(vector,maxlen=MAX_LENGTH) 
     
     #학습한 모델 불러오기   
-    model=keras.models.load_model(r'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/my_models/') 
-    model.load_weights(r'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/DATA_OUT/cnn_classifier_kr/weights.h5')
+    model=keras.models.load_model(r'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/my_models/') 
+    model.load_weights(r'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/DATA_OUT/cnn_classifier_kr/weights.h5')
      
     predictions=model.predict(pad_new)
     predicted_index=np.argmax(predictions)
