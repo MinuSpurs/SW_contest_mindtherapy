@@ -70,7 +70,15 @@
 
 ### test_nlp.py
 
-* 학습한 트레이닝 데이터를 통해 테스트를 해서 정확도를 구한다.
+* 트레이닝 데이터를 통해 학습된 결과를 테스트 데이터에 테스트해서 정확도를 출력한다.
+
+
+### predict_nlp.py
+
+* 학습한 분류기의 성능과 결과를 확인한다.
+* 문장을 입력하면 긍정인지 부정인지에 대한 결과를 출력해준다.
+
+![pos_predict](https://github.com/MinuSpurs/SW_contest_mindtherapy/assets/93541649/49541fe8-551c-4aa1-be76-642cd1e42f4d)
 
 
 ### insert_is_pos.py
@@ -79,7 +87,6 @@
 * client_comment 테이블을 통해 내담자의 상담 내용을 조회하여 그 내용이 긍정인지 부정인지 판단한다.
 * 긍정이면 is_pos에 1을, 부정이면 0을 INSERT 해준다.
 
-![pos_predict](https://github.com/MinuSpurs/SW_contest_mindtherapy/assets/93541649/49541fe8-551c-4aa1-be76-642cd1e42f4d)
 
 
 ## Emotion_process
@@ -97,7 +104,15 @@
 
 ### emotion_test_nlp.py
 
-* 학습한 트레이닝 데이터를 통해 테스트를 해서 정확도를 구한다.
+* 트레이닝 데이터를 통해 학습된 결과를 테스트 데이터에 테스트해서 정확도를 출력한다.
+
+
+### emotion_predict_nlp.py
+
+* 학습한 분류기의 성능과 결과를 확인한다.
+* 문장을 입력하면 긍정인지 부정인지에 대한 결과를 출력해준다.
+
+![image](https://github.com/MinuSpurs/SW_contest_mindtherapy/assets/93541649/677c71de-158e-47fa-ab93-904f79afc2b9)
 
 
 ### insert_emotion.py
