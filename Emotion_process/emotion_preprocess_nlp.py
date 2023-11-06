@@ -7,7 +7,7 @@ from keras.utils import pad_sequences
 from keras.preprocessing.text import Tokenizer
 from sklearn.preprocessing import LabelEncoder
 
-DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/DATA/' #데이터 경로 설정
+DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/DATA/' #데이터 경로 설정
 # Excel 파일 읽기
 data = pd.read_excel(DATA_PATH+'emotion_copurs_train.xlsx') # your_file.xlsx에 실제 파일 이름 입력
 
@@ -99,7 +99,7 @@ test_inputs = pad_sequences(test_sequences,maxlen=MAX_SEQUENCE_LENGTH,padding='p
 #평가 데이터 라벨 벡터화
 test_labels = np.array(test_data['label'])
 
-DEFAULT_PATH  = 'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/' #경로지정
+DEFAULT_PATH  = 'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/' #경로지정
 DATA_PATH = 'CLEAN_DATA/' #.npy파일 저장 경로지정
 TRAIN_INPUT_DATA = 'nsmc_train_input.npy'
 TRAIN_LABEL_DATA = 'nsmc_train_label.npy'

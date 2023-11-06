@@ -13,8 +13,8 @@ from keras.utils import to_categorical
 #학습 설정 - loss를 categorical_crossentropy로 변경하고 label을 원-핫 인코딩으로 변환합니다.
 
 #전처리 데이터 불러오기
-DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/CLEAN_DATA/' #데이터 경로 설정
-DATA_OUT = 'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/DATA_OUT/' #데이터 경로 설정
+DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/CLEAN_DATA/' #데이터 경로 설정
+DATA_OUT = 'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/DATA_OUT/' #데이터 경로 설정
 INPUT_TRAIN_DATA = 'nsmc_train_input.npy'
 LABEL_TRAIN_DATA = 'nsmc_train_label.npy'
 DATA_CONFIGS = 'data_configs.json'
@@ -99,4 +99,4 @@ history=model.fit(train_input,train_label_onehot,
                   callbacks=[earlystop_callback,cp_callback])
 
 # 모델 저장하기
-save_model(model,'C:/Users/82107/Desktop/Study/SW_Contest/Emotion_process/my_models/') #저장폴더지정
+save_model(model,'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/Emotion_process/my_models/') #저장폴더지정

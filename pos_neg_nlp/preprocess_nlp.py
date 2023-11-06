@@ -6,7 +6,7 @@ from konlpy.tag import Okt
 from keras.utils import pad_sequences
 from keras.preprocessing.text import Tokenizer
 
-DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_Contest/pos_neg_nlp/DATA/' #데이터 경로 설정
+DATA_PATH = 'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/pos_neg_nlp/DATA/' #데이터 경로 설정
 train_data = pd.read_csv(DATA_PATH+'ratings_train.txt', header = 0, delimiter='\t', quoting=3)
 
 
@@ -73,7 +73,7 @@ test_inputs = pad_sequences(test_sequences,maxlen=MAX_SEQUENCE_LENGTH,padding='p
 #평가 데이터 라벨 벡터화
 test_labels = np.array(test_data['label'])
 
-DEFAULT_PATH  = 'C:/Users/82107/Desktop/Study/SW_Contest/pos_neg_nlp/' #경로지정
+DEFAULT_PATH  = 'C:/Users/82107/Desktop/Study/SW_contest_mindtherapy/pos_neg_nlp/' #경로지정
 DATA_PATH = 'CLEAN_DATA/' #.npy파일 저장 경로지정
 TRAIN_INPUT_DATA = 'nsmc_train_input.npy'
 TRAIN_LABEL_DATA = 'nsmc_train_label.npy'
